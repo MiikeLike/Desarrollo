@@ -13,24 +13,27 @@ class PageViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
 
-        let pageOne = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "pageOne")
-        let pageTwo = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "pageTwo")
-        myControllers.append(pageOne)
-        myControllers.append(pageTwo)
+        let myPageOne = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "pageOne")
+        let myPageTwo = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "pageTwo")
         
+        myControllers.append(myPageOne)
+        myControllers.append(myPageTwo)
         
-        setViewControllers([pageOne], direction: .forward, animated: true, completion: nil)
+        setViewControllers([myPageOne], direction:.forward , animated: true)
         
         dataSource = self
     }
 }
 
-extension PageViewController: UIPageViewControllerDataSource {
+
+extension PageViewController: UIPageViewControllerDataSource{
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         let index = myControllers.firstIndex(of: viewController)
-        if index == 0 {
+        if index == 0{
             return myControllers.last
         }
         return myControllers.first
@@ -39,11 +42,9 @@ extension PageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         let index = myControllers.firstIndex(of: viewController)
-        if index == 0 {
+        if index == 1{
             return myControllers.last
         }
         return myControllers.first
     }
-    
-    
 }

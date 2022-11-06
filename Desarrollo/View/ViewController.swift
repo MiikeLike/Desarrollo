@@ -9,18 +9,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    //TextField
+    //Outlet
     
     @IBOutlet weak var myTextFieldM: UITextField!
     @IBOutlet weak var myTextFieldMe: UITextField!
     @IBOutlet weak var myTextFieldN: UITextField!
     
-    
-    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+   //TextField
         myTextFieldM.textColor = .blue
         myTextFieldM.placeholder = "Escribir diámetro mayor del rollo"
         myTextFieldM.delegate = self
