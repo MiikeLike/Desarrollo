@@ -15,43 +15,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var myTextFieldMe: UITextField!
     @IBOutlet weak var labelView: UILabel!
     @IBOutlet weak var myTextFieldN: UITextField!
-   //MARK: -Action
-    @IBAction func resultButton(_ sender: Any) {
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTextFields()
         configureTapGesture()
-        
-        
-        var minorDiameter = myTextFieldMe
-        var mayorDiameter = myTextFieldM
-        var numberReturn = myTextFieldN
-        
-        //MARK: - Func Action
-        func buttonAction(_ sender: Any) {
-            guard let minorDiameter = myTextFieldMe.text else{
-                print("Falta un dato")
-                return
-            }
-        print("Diametro menor es \(minorDiameter)")
-        }
-        {
-            guard let mayorDiameter = myTextFieldM.text else{
-                print("Falta un dato")
-                return
-            }
-        print("Diametro menor es \(mayorDiameter)")
-        }
-        {
-            guard let numberReturn = myTextFieldN.text else{
-                print("Falta un dato")
-                return
-            }
-        print("Diametro menor es \(numberReturn)")
-        }
-        
+
+
         
    //MARK: -TextField
         myTextFieldM.textColor = .blue
@@ -69,9 +40,11 @@ class ViewController: UIViewController {
         myTextFieldMe.keyboardType = .numberPad
         myTextFieldN.keyboardType = .numberPad
         
-
-        
+        var minorDiameter = myTextFieldMe
+        var mayorDiameter = myTextFieldM
+        var numberReturn = myTextFieldN
     }
+ //MARK: -Actión
     
     //MARK: Control de gestos
     private func configureTapGesture(){
@@ -97,6 +70,5 @@ extension ViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    
-    
 }
+
