@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var myTextFieldM: UITextField!
     @IBOutlet weak var myTextFieldMe: UITextField!
-    @IBOutlet weak var labelView: UILabel!
     @IBOutlet weak var myTextFieldN: UITextField!
 
     
@@ -26,23 +25,14 @@ class ViewController: UIViewController {
         
    //MARK: -TextField
         myTextFieldM.textColor = .blue
-        myTextFieldM.placeholder = "Escribir diámetro mayor del rollo"
         myTextFieldM.delegate = self
         myTextFieldMe.textColor = .blue
-        myTextFieldMe.placeholder = "Escribir diámetro menor del rollo"
         myTextFieldMe.delegate = self
         
         myTextFieldN.textColor = .blue
-        myTextFieldN.placeholder = "Escribir el número de vueltas que tiene el rollo"
         myTextFieldN.delegate = self
         
-        myTextFieldM.keyboardType = .numberPad
-        myTextFieldMe.keyboardType = .numberPad
-        myTextFieldN.keyboardType = .numberPad
         
-        var minorDiameter = myTextFieldMe
-        var mayorDiameter = myTextFieldM
-        var numberReturn = myTextFieldN
     }
  //MARK: -Actión
     
